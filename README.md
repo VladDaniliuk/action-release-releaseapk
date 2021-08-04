@@ -1,8 +1,6 @@
 # action-release-releaseapk
 
-![screenshot](screenshot.png)
-
-🕷 Build and release release APK when your push a new tag
+🕷 Build and release release APK when your push
 
 ## Usage
 
@@ -32,10 +30,13 @@ jobs:
     - name: Build Release APK
       run: ./gradlew assembleRelease
     - name: Releasing using Hub
-      uses: kyze8439690/action-release-releaseapk@master
+      uses: VladDaniliuk/action-release-releaseapk@master
       env:
        GITHUB_TOKEN: ${{ secrets.TOKEN }}
+       VERSION_VARIABLE: versionName
+       APP_FILE: buildSrc/Android.kt
        APP_FOLDER: app
+       RELEASE_TITLE: New Build
 ```
 
 ### Secrets
@@ -51,7 +52,9 @@ I am unsure as to why using the default `GITHUB_TOKEN` provided universally will
 You'll need to provide these environment variables to specify exactly what information is needed to build the APK.
 
 * **APP_FOLDER**: main folder to search for the apk. Most of the time, it's `app`
+* **APP_FILE**: file to search for the versin. This action only used with kotlins `buildSrc`
+* **RELEASE_TITLE**: title for releasing application
 
 ## Credits
 
-Based off [ShaunLWM/action-release-debugapk](https://github.com/ShaunLWM/action-release-debugapk)
+Based off [ShaunLWM/action-release-debugapk](https://github.com/ShaunLWM/action-release-debugapk) and [kyze8439690/action-release-releaseapk](https://github.com/kyze8439690/action-release-releaseapk)
