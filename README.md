@@ -37,6 +37,7 @@ jobs:
        APP_FILE: buildSrc/Android.kt
        APP_FOLDER: app
        RELEASE_TITLE: New Build
+       NAME_VARIABLE: app-release.apk
 ```
 
 ### Secrets
@@ -54,6 +55,7 @@ You'll need to provide these environment variables to specify exactly what infor
 * **APP_FOLDER**: main folder to search for the apk. Most of the time, it's `app`
 * **APP_FILE**: file to search for the versin. This action only used with kotlins `buildSrc`
 * **RELEASE_TITLE**: title for releasing application
+* **NAME_VARIABLE**: name of generated apk. Standard name `app-release.apk`
 
 ## Credits
 
