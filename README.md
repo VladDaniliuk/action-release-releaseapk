@@ -35,7 +35,7 @@ jobs:
        GITHUB_TOKEN: ${{ secrets.TOKEN }}
        VERSION_VARIABLE: versionName
        APP_FILE: buildSrc/Android.kt
-       APP_FOLDER: app
+       APP_FOLDER: ./app/release/app.apk
        RELEASE_TITLE: New Build
        NAME_VARIABLE: app-release.apk
 ```
@@ -52,7 +52,7 @@ I am unsure as to why using the default `GITHUB_TOKEN` provided universally will
 
 You'll need to provide these environment variables to specify exactly what information is needed to build the APK.
 
-* **APP_FOLDER**: main folder to search for the apk. Most of the time, it's `app`
+* **APP_FOLDER**: full path to apk
 * **APP_FILE**: file to search for the versin. This action only used with kotlins `buildSrc`
 * **RELEASE_TITLE**: title for releasing application
 * **NAME_VARIABLE**: name of generated apk. Standard name `app-release.apk`
