@@ -36,6 +36,7 @@ jobs:
        VERSION_VARIABLE: versionName
        APP_FILE: buildSrc/Android.kt
        APP_FOLDER: ./app/release/app.apk
+       CHANGELOG_FILE: ./CHANGELOG.md
        RELEASE_TITLE: New Build
        NAME_VARIABLE: app-release.apk
 ```
@@ -54,6 +55,7 @@ You'll need to provide these environment variables to specify exactly what infor
 
 * **APP_FOLDER**: full path to apk
 * **APP_FILE**: file to search for the versin. This action only used with kotlins `buildSrc`
+* **CHANGELOG_FILE**: file with list of changes.
 * **RELEASE_TITLE**: title for releasing application
 * **NAME_VARIABLE**: name of generated apk. Standard name `app-release.apk`
 
